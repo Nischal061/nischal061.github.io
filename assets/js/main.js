@@ -245,14 +245,14 @@
   
     emailjs.sendForm("service_vlsyplg","template_i8xdwbd",form)
       .then(function(response) {
-        console.log('SUCCESS!', response);
+        
        
         document.querySelector(".loading").style.display = "none";
        
         document.querySelector(".sent-message").style.display = "block";
         form.reset()
       }, function(error) {
-        console.log('FAILED...', error);
+       
         document.querySelector(".loading").style.display = "none";
         document.querySelector(".error-message").style.display = "block";
       });
