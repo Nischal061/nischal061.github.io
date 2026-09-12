@@ -77,7 +77,7 @@
     revealables.forEach((el) => revealObserver.observe(el));
 
     const typingEl = $('#typing-text');
-    const words = ['Full-Stack Developer', '.NET / SQL Enthusiast', 'QA Manager', 'Bug Hunter', 'Always Learning'];
+    const words = ['Full-Stack Developer', '.NET / PostgreSQL', 'QA Manager', 'Accounting Systems', 'Bug Hunter', 'Always Learning'];
     let wordIndex = 0;
     let charIndex = 0;
     let deleting = false;

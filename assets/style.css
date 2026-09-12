@@ -408,16 +408,11 @@ body {
     box-shadow: var(--shadow);
 }
 
-.badge-loc {
-    position: absolute;
-    left: -20px;
-    top: 40%;
-}
-
-.badge-status {
-    position: absolute;
-    right: -26px;
-    bottom: 12%;
+.hero-badges {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .dot {
@@ -1119,11 +1114,6 @@ textarea {
 
     .contact-grid {
         grid-template-columns: 1fr;
-    }
-
-    .badge-loc,
-    .badge-status {
-        position: static;
     }
 
     .hero-visual {
