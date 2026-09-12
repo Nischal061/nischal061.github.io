@@ -183,6 +183,56 @@
         })
         .catch(heatmapFallback);
 
+    const languages = [
+        { name: 'C#', pct: 50, color: '#7c5cff' },
+        { name: 'HTML', pct: 23, color: '#e34f26' },
+        { name: 'JavaScript', pct: 13, color: '#f7df1e' },
+        { name: 'SCSS', pct: 5, color: '#cd6799' },
+        { name: 'PHP', pct: 5, color: '#777bb4' },
+        { name: 'C', pct: 4, color: '#5a74b8' }
+    ];
+
+    const languageBars = $('#language-bars');
+
+    function renderLanguageBars() {
+        const total = languages.reduce((sum, l) => sum + l.pct, 0);
+        languageBars.innerHTML = '';
+        languages.forEach((lang, i) => {
+            const row = document.createElement('div');
+            row.className = 'lang-row';
+
+            const name = document.createElement('span');
+            name.className = 'lang-name';
+            name.textContent = lang.name;
+
+            const track = document.createElement('span');
+            track.className = 'lang-bar';
+
+            const fill = document.createElement('span');
+            fill.className = 'lang-bar-fill';
+            fill.style.width = 0 + '%';
+            fill.style.background = 'linear-gradient(90deg, ' + lang.color + ', var(--accent-2))';
+            track.appendChild(fill);
+
+            const pct = document.createElement('span');
+            pct.className = 'lang-pct';
+            pct.textContent = Math.round((lang.pct / total) * 100) + '%';
+
+            row.appendChild(name);
+            row.appendChild(track);
+            row.appendChild(pct);
+            languageBars.appendChild(row);
+
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    fill.style.width = (lang.pct / total) * 100 + '%';
+                });
+            });
+        });
+    }
+
+    if (languageBars) renderLanguageBars();
+
     const contactForm = $('#contact-form');
     const EMAILJS_PUBLIC_KEY = 'WJFQUeozx0cUbrPmJ';
     const EMAILJS_SERVICE_ID = 'service_6zh7czp';

@@ -720,6 +720,67 @@ body {
     background: var(--surface);
 }
 
+.lang-card {
+    max-width: 860px;
+    margin-inline: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lang-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+}
+
+.language-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+    justify-content: center;
+}
+
+.lang-row {
+    display: grid;
+    grid-template-columns: 96px 1fr 40px;
+    align-items: center;
+    gap: 12px;
+}
+
+.lang-name {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--text);
+}
+
+.lang-bar {
+    height: 10px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.lang-bar-fill {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lang-pct {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: right;
+}
+
 /* ===== PROJECTS ===== */
 .project-grid {
     display: grid;
